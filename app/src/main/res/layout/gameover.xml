@@ -29,6 +29,7 @@
         android:gravity="center"
         android:orientation="vertical"
         android:layout_marginBottom="64dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,6 +43,23 @@
             android:text="Points: "
             android:textColor="#AF7CB8"
             android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/textMax"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:text="Max Points:"
+            android:textColor="#AF7CB8"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max Points:"
+            android:textColor="#AF7CB8"
+            android:textSize="34sp" />
+
     </LinearLayout>
 
 </LinearLayout>
