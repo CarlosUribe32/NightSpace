@@ -19,6 +19,7 @@ public class GameOver extends AppCompatActivity {
         int points = getIntent().getExtras().getInt("points");
         tvPoints = findViewById(R.id.tvPoints);
         tvPoints.setText("" + points);
+
     }
 
 

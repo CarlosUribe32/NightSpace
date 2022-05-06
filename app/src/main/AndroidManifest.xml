@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
         <activity
+            android:name=".Creditos"
+            android:exported="false" />
+        <activity
             android:name=".StartUp"
-            android:screenOrientation="landscape"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,12 +24,12 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".GameOver"
             android:screenOrientation="landscape">
         </activity>
+            android:screenOrientation="landscape"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
