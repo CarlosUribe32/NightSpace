@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">NightSpace</string>
+    <string name="Creditos">
+        <![CDATA[
+           El proyecto Night Space fue realizado por:<br>
+           Juan Nicolás Ruiz Muñoz<br>
+           Carlos Andrés Uribe Cortéz<br>
+           Jean Pierre Agudelo Taborda<br>
+           Estudiantes de la Universidad Pontificia Bolivariana<br>
+
+        ]]>
+    </string>
 </resources>
