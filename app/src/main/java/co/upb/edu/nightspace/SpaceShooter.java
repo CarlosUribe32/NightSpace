@@ -26,7 +26,7 @@ public class SpaceShooter extends View {
     long UPDATE_MILLIS = 30;
     static int screenWidth, screenHeight;
     int points = 0;
-    int life = 3;
+    int life = 5;
     int time = 0;
     Paint scorePaint;
     int TEXT_SIZE = 80;
@@ -91,8 +91,17 @@ public class SpaceShooter extends View {
             context.startActivity(intent);
             ((Activity) context).finish();
         }
-        if(time%1000==0){
-            enemySpaceship = new EnemySpaceship(context);
+
+        if(time%2000==0 && time!=0){
+            enemySpaceship = new EnemySpaceship(context, "Notnormal");
+            enemyList.add(enemySpaceship);
+            enemyShots = new ArrayList<>();
+            mapenemyShots.put(enemySpaceship, enemyShots);
+            enemyShotAction = false;
+            mapenemyShotAction.put(enemySpaceship, enemyShotAction);
+        }
+        else if(time%1000==0){
+            enemySpaceship = new EnemySpaceship(context, "normal");
             enemyList.add(enemySpaceship);
             enemyShots = new ArrayList<>();
             mapenemyShots.put(enemySpaceship, enemyShots);
@@ -116,23 +125,45 @@ public class SpaceShooter extends View {
             }
 
             if(enemyShotAction == false){
-                if(enemy.ex >= 200 + random.nextInt(400)){
-                    Shot enemyShot = new Shot(context, enemy.ex + enemy.getEnemySpaceshipWidth() / 2, enemy.ey );
-                    enemyShots.add(enemyShot);
+                if(enemy.how.equals("normal")){
+                    if(enemy.ex >= 200 + random.nextInt(400)){
+                        Shot enemyShot = new Shot(context, enemy.ex + enemy.getEnemySpaceshipWidth() / 2, enemy.ey );
+                        enemyShots.add(enemyShot);
 
-                    enemyShotAction = true;
-                }
-                if(enemy.ex >= 400 + random.nextInt(800)){
-                    Shot enemyShot = new Shot(context, enemy.ex + enemy.getEnemySpaceshipWidth() / 2, enemy.ey );
-                    enemyShots.add(enemyShot);
+                        enemyShotAction = true;
+                    }
+                    if(enemy.ex >= 400 + random.nextInt(800)){
+                        Shot enemyShot = new Shot(context, enemy.ex + enemy.getEnemySpaceshipWidth() / 2, enemy.ey );
+                        enemyShots.add(enemyShot);
 
-                    enemyShotAction = true;
+                        enemyShotAction = true;
+                    }
+                    else{
+                        Shot enemyShot = new Shot(context, enemy.ex + enemy.getEnemySpaceshipWidth() / 2, enemy.ey );
+                        enemyShots.add(enemyShot);
+
+                        enemyShotAction = true;
+                    }
                 }
                 else{
-                    Shot enemyShot = new Shot(context, enemy.ex + enemy.getEnemySpaceshipWidth() / 2, enemy.ey );
-                    enemyShots.add(enemyShot);
-
-                    enemyShotAction = true;
+                    if(enemy.ex >= 200 + random.nextInt(400)){
+                        Shot enemyShot = new Shot(context, enemy.ex + enemy.getEnemySpaceshipWidth() / 2, enemy.ey );
+                        enemyShots.add(enemyShot);
+                        enemyShots.add(enemyShot);
+                        enemyShotAction = true;
+                    }
+                    if(enemy.ex >= 400 + random.nextInt(800)){
+                        Shot enemyShot = new Shot(context, enemy.ex + enemy.getEnemySpaceshipWidth() / 2, enemy.ey );
+                        enemyShots.add(enemyShot);
+                        enemyShots.add(enemyShot);
+                        enemyShotAction = true;
+                    }
+                    else{
+                        Shot enemyShot = new Shot(context, enemy.ex + enemy.getEnemySpaceshipWidth() / 2, enemy.ey );
+                        enemyShots.add(enemyShot);
+                        enemyShots.add(enemyShot);
+                        enemyShotAction = true;
+                    }
                 }
             }
             mapenemyShots.put(enemy, enemyShots);
@@ -173,7 +204,7 @@ public class SpaceShooter extends View {
         for (EnemySpaceship enemy:enemyList) {
             canvas.drawBitmap(enemy.getEnemySpaceship(), enemy.ex, enemy.ey, null);
         }
-//        canvas.drawBitmap(enemySpaceship.getEnemySpaceship(), enemySpaceship.ex, enemySpaceship.ey, null);
+        //        canvas.drawBitmap(enemySpaceship.getEnemySpaceship(), enemySpaceship.ex, enemySpaceship.ey, null);
         time++;
         if(ourSpaceship.ox > screenWidth - ourSpaceship.getOurSpaceshipWidth()){
             ourSpaceship.ox = screenWidth - ourSpaceship.getOurSpaceshipWidth();
