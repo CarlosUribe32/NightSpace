@@ -18,4 +18,8 @@ public class StartUp extends AppCompatActivity {
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }
+    public void startCreditos(View view){
+        startActivity(new Intent(this, Creditos.class));
+        finish();
+    }
 }
