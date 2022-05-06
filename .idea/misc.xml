@@ -3,9 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Carlos/Documents/7_Semestre/Aplicaciones_Moviles/Juego_Android_Nativo/NightSpace/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Carlos/Documents/7_Semestre/Aplicaciones_Moviles/Juego_Android_Nativo/NightSpace/app/src/main/res/layout/gameover.xml" value="0.22" />
-        <entry key="..\:/Users/Carlos/Documents/7_Semestre/Aplicaciones_Moviles/Juego_Android_Nativo/NightSpace/app/src/main/res/layout/startup.xml" value="0.1" />
+        <entry key="..\:/Users/jeanp/Documents/NightSpace/app/src/main/res/layout/activity_main.xml" value="0.2246376811594203" />
+        <entry key="..\:/Users/jeanp/Documents/NightSpace/app/src/main/res/layout/gameover.xml" value="0.2246376811594203" />
+        <entry key="..\:/Users/jeanp/Documents/NightSpace/app/src/main/res/layout/startup.xml" value="0.264" />
       </map>
     </option>
   </component>
