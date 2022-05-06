@@ -21,13 +21,10 @@ public class GameOver extends AppCompatActivity {
         tvPoints.setText("" + points);
     }
 
-    public void restart(View view) {
-        Intent intent = new Intent(GameOver.this, StartUp.class);
-        startActivity(intent);
-        finish();
-    }
 
     public void exit(View view) {
+        Intent intent = new Intent(GameOver.this, StartUp.class);
+        startActivity(intent);
         finish();
     }
 }
